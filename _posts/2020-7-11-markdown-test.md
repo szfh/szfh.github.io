@@ -33,8 +33,13 @@ You can also embed plots, for example:
 
 
 ![plot of chunk pressure 1](https://raw.githubusercontent.com/szfh/szfh.github.io/master/images/markdown-test/pressure-1.png)
-![plot of chunk pressure 2]({{ site.baseurl }}images/markdown-test/pressure-1.png)
+![plot of chunk pressure 2]({{ site.baseurl }}/images/markdown-test/pressure-1.png)
 
-![plot of chunk pressure 3]({{site.baseurl}}images/markdown-test/pressure-1.png)
+![plot of chunk pressure 3]({{site.baseurl}}/images/markdown-test/pressure-1.png)
+
+{{site.baseurl}}
+{{ site.baseurl }}
+print({{site.baseurl}})
+print({{ site.baseurl }})
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
