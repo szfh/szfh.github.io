@@ -1,6 +1,7 @@
 ---
 title: "Test markdown generator"
 output: github_document
+layout: post
 ---
 
 
