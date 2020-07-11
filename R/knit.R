@@ -9,4 +9,4 @@ posts <- here("_posts")
 tests <- here("_tests")
 fig_dir <- "fig"
 
-ezknit(file=here("R","markdown-test.Rmd"),out_dir=tests,fig_dir=fig_dir,keep_html=FALSE)
+ezknit(file=here("R","2020-7-11-markdown-test.Rmd"),out_dir=drafts,fig_dir=fig_dir,keep_html=FALSE)
