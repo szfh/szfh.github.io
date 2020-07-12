@@ -5,15 +5,43 @@ layout: post
 ---
 
 ```{r setup}
+knitr::opts_chunk$set(echo=FALSE,include=FALSE)
+library(tidyverse)
 library(cowplot)
-library(here)\
+library(here)
+library(png)
+library(grid)
+
+github <- rasterGrob(readPNG(here("images","GitHub-Mark","PNG","GitHub-Mark-64px.png")))
 ```
 
-In exchange for free data at fbref or on their site, Statsbomb politely ask you to use their logo, available [here](https://statsbomb.com/media-pack/).
+In exchange for free data at fbref or on their site, Statsbomb politely ask you to credit your work, using the logos available [here](https://statsbomb.com/media-pack/).
 
-In ggplot you can add a text caption easily, but an image is surprisingly complicated.
+In ggplot you can add a text caption easily, but an image is a more complicated.
 
+```{r caption}
+plots <- list()
+plots$p1 <-
+  mtcars %>%
+  ggplot(aes(x=cyl,y=hp)) +
+  geom_point() +
+  theme_bw() +
+  expand_limits(x=c(2,10),y=c(0,400)) +
+  annotation_custom(github, xmin=8, xmax=10, ymin=300, ymax=400)
 
+plots$p2 <-
+  mtcars %>%
+  ggplot(aes(x=mpg,y=disp)) +
+  geom_point() +
+  theme_bw() +
+  expand_limits(x=c(8),y=c(0,500)) +
+  annotation_custom(github, xmin=8, xmax=10, ymin=300, ymax=400)
+
+grid1 <- plot_grid(plots$p1, plots$p2)
+grid1
+```
+
+![grid-1]({{site.baseurl}}/images/scrape-nicely/caption-1.png)
 
 The Cowplot package will do this for you. Other data sources are available and you can use this for any logo, including your own if you like.
 
