@@ -35,7 +35,7 @@ If you use freely available data in your work, it's polite to give credit. You c
 
 In ggplot you can add a text caption easily, but an image is a more complicated.
 
-```{r annotation-code,include=TRUE,eval=FALSE}
+```{r annotation-code,echo=TRUE,include=TRUE,eval=FALSE}
 annotation_custom(github, xmin=8, xmax=10, ymin=300, ymax=400)
 ```
 ```{r annotation}
@@ -52,14 +52,12 @@ grid1
 
 The Cowplot package will do this better by placing an image in the same relative position.
 
-# Method
-
-1. Save your ggplots in a list. This is good practice for lots of reasons.
+## Using Cowplot
 
 1. Install Cowplot and create a function like this.  
-You can hard-code the file name and coordinates or take them in as arguments.
+You can hard-code the file name and coordinates to the function or take them in as arguments.
 
-```{r add-logo-fn, echo=TRUE}
+```{r add-logo-fn, include=TRUE, echo=TRUE}
 add_logo <- function(plots,image_path){
   plots_logo <- list()
   
@@ -73,9 +71,8 @@ add_logo <- function(plots,image_path){
                  y=0.95,
                  hjust=1,
                  vjust=1,
-                 width=0.1,
-                 height=0.1,
-                 scale=1)
+                 width=0.12,
+                 height=0.12)
   }
   return(plots_logo)
 }
@@ -85,12 +82,11 @@ draw_image(github_path,x=0.95,y=0.95,hjust=1,vjust=1,width=0.1,height=0.1,scale=
 ```
 ```{r draw-image}
 grid2 <- plot_grid(
-  plots$p1 %>% ggdraw() + draw_image(github_path,x=0.95,y=0.95,hjust=1,vjust=1,width=0.12,height=0.12,scale=1),
-  plots$p2 %>% ggdraw() + draw_image(github_path,x=0.95,y=0.95,hjust=1,vjust=1,width=0.12,height=0.12,scale=1),
+  plots$p1 %>% ggdraw() + draw_image(github_path,x=0.95,y=0.95,hjust=1,vjust=1,width=0.12,height=0.12),
+  plots$p2 %>% ggdraw() + draw_image(github_path,x=0.95,y=0.95,hjust=1,vjust=1,width=0.12,height=0.12),
   nrow=1
 )
 grid2
-
 ```
 
 1. Call the function with your list of ggplots.
@@ -99,15 +95,6 @@ grid2
 
 *Adding a logo with Cowplot will place it neatly where you want.*
 
-Please scrape responsibly. The end.
-
-# Plan
-1. Intro
-1. The problem
-1. Details
-1. Please be responsible
-1. Sources/references
-
-# Links
+## Useful links
 1. https://www.datanovia.com/en/blog/ggplot-title-subtitle-and-caption/
 1. https://www.rdocumentation.org/packages/cowplot/versions/1.0.0/topics/draw_image
