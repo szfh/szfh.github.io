@@ -48,13 +48,15 @@ grid1
 ```
 
 ![annotation-1]({{site.baseurl}}/images/scrape-nicely/annotation-1.png)
+
 *Placing a logo using plot coordinates can be painful.*
 
 The Cowplot package will do this better by placing an image in the same relative position.
 
 ## Using Cowplot
 
-1. Install Cowplot and create a function like this.  
+Install Cowplot and create a function like this.
+
 You can hard-code the file name and coordinates to the function or take them in as arguments.
 
 ```{r add-logo-fn, include=TRUE, echo=TRUE}
@@ -89,12 +91,12 @@ grid2 <- plot_grid(
 grid2
 ```
 
-1. Call the function with your list of ggplots.
+Then call the function with your list of ggplots.
 
 ![grid-1]({{site.baseurl}}/images/scrape-nicely/draw-image-1.png)
 
 *Adding a logo with Cowplot will place it neatly where you want.*
 
 ## Useful links
-1. https://www.datanovia.com/en/blog/ggplot-title-subtitle-and-caption/
-1. https://www.rdocumentation.org/packages/cowplot/versions/1.0.0/topics/draw_image
+1. (https://www.datanovia.com/en/blog/ggplot-title-subtitle-and-caption/)
+1. (https://www.rdocumentation.org/packages/cowplot/versions/1.0.0/topics/draw_image)
