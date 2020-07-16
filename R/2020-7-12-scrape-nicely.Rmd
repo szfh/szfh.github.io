@@ -12,51 +12,94 @@ library(here)
 library(png)
 library(grid)
 
-github <- rasterGrob(readPNG(here("images","GitHub-Mark","PNG","GitHub-Mark-64px.png")))
-```
+github_path <- here("images","github64.png")
+github <- rasterGrob(readPNG(github_path))
 
-In exchange for free data at fbref or on their site, Statsbomb politely ask you to credit your work, using the logos available [here](https://statsbomb.com/media-pack/).
-
-In ggplot you can add a text caption easily, but an image is a more complicated.
-
-```{r caption}
 plots <- list()
 plots$p1 <-
   mtcars %>%
   ggplot(aes(x=cyl,y=hp)) +
   geom_point() +
   theme_bw() +
-  expand_limits(x=c(2,10),y=c(0,400)) +
-  annotation_custom(github, xmin=8, xmax=10, ymin=300, ymax=400)
+  expand_limits(x=c(2,10),y=c(0,400))
 
 plots$p2 <-
   mtcars %>%
   ggplot(aes(x=mpg,y=disp)) +
   geom_point() +
   theme_bw() +
-  expand_limits(x=c(8),y=c(0,500)) +
-  annotation_custom(github, xmin=8, xmax=10, ymin=300, ymax=400)
+  expand_limits(x=c(8),y=c(0,500))
+```
 
-grid1 <- plot_grid(plots$p1, plots$p2)
+If you use freely available data in your work, it's polite to give credit. You can do this with a text caption or by placing a logo inside your image.
+
+In ggplot you can add a text caption easily, but an image is a more complicated.
+
+```{r annotation-code,include=TRUE,eval=FALSE}
+annotation_custom(github, xmin=8, xmax=10, ymin=300, ymax=400)
+```
+```{r annotation}
+grid1 <- plot_grid(
+  plots$p1 + annotation_custom(github, xmin=8, xmax=10, ymin=300, ymax=400), 
+  plots$p2 + annotation_custom(github, xmin=8, xmax=10, ymin=300, ymax=400),
+  nrow=1
+)
 grid1
 ```
 
-![grid-1]({{site.baseurl}}/images/scrape-nicely/caption-1.png)
+![annotation-1]({{site.baseurl}}/images/scrape-nicely/annotation-1.png)
+*Placing a logo using plot coordinates can be painful.*
 
-The Cowplot package will do this for you. Other data sources are available and you can use this for any logo, including your own if you like.
+The Cowplot package will do this better by placing an image in the same relative position.
 
 # Method
 
 1. Save your ggplots in a list. This is good practice for lots of reasons.
 
-plots$mtcars <- ggplot()
-
-1. Install Cowplot and create a function like this.
+1. Install Cowplot and create a function like this.  
 You can hard-code the file name and coordinates or take them in as arguments.
+
+```{r add-logo-fn, echo=TRUE}
+add_logo <- function(plots,image_path){
+  plots_logo <- list()
+  
+  for(i in 1:length(plots)){
+    name <- names(plots[i])
+    plots_logo[[name]] <-
+      plots[[i]] %>%
+      ggdraw() +
+      draw_image(image_path,
+                 x=0.95,
+                 y=0.95,
+                 hjust=1,
+                 vjust=1,
+                 width=0.1,
+                 height=0.1,
+                 scale=1)
+  }
+  return(plots_logo)
+}
+```
+```{r draw-image-code,include=TRUE,eval=FALSE}
+draw_image(github_path,x=0.95,y=0.95,hjust=1,vjust=1,width=0.1,height=0.1,scale=1)
+```
+```{r draw-image}
+grid2 <- plot_grid(
+  plots$p1 %>% ggdraw() + draw_image(github_path,x=0.95,y=0.95,hjust=1,vjust=1,width=0.12,height=0.12,scale=1),
+  plots$p2 %>% ggdraw() + draw_image(github_path,x=0.95,y=0.95,hjust=1,vjust=1,width=0.12,height=0.12,scale=1),
+  nrow=1
+)
+grid2
+
+```
 
 1. Call the function with your list of ggplots.
 
-Please scrape responsibly.
+![grid-1]({{site.baseurl}}/images/scrape-nicely/draw-image-1.png)
+
+*Adding a logo with Cowplot will place it neatly where you want.*
+
+Please scrape responsibly. The end.
 
 # Plan
 1. Intro
