@@ -1,13 +1,13 @@
 ---
-title: "Is Hojbjerg good?"
+title: "Is Pierre-Emile Højbjerg good?"
 output: github_document
 layout: post
 ---
 
-Is Hojbjerg good? Three things:
+> Is Pierre-Emile Højbjerg good? Three things:
 
-## Position
-He appears in a double-pivot with James Ward-Prowse, where neither tends to play particularly further forward than the other. Hojbjerg gets significantly more on-ball time than Ward-Prowse and completes riskier, more progressive actions.
+## Where he fits
+He has appeared in a double-pivot with James Ward-Prowse, where neither tends to play particularly further forward than the other. Hojbjerg gets significantly more on-ball time than Ward-Prowse and completes riskier, more progressive actions.
 
 > (Possession: Targ/90, Rec/90).
 > football slices, Hojbjerg v JWP?
@@ -16,16 +16,19 @@ There is good progressive passing volume but that doesn't always translate into 
 
 > something
 
-Sign this player if you want:
-More passing and ball progression in your midfield
-AND
+**Sign this player if you want**  
+more passing and ball progression in your midfield  
+*and*  
+something
 
-Don't sign this player if you want:
-A Kante/Ndidi/Fernandinho that lets you get five attacking players on the pitch? This is less of that, but maybe the fourth one of those doesn't exist.
-OR
+**Don't sign this player if you want**  
+a Kante/Ndidi/Fernandinho that lets you get five attacking players on the pitch  
+*or*  
 a player to put all your centre-of-the-pitch creation through.
 
-You'll be looking for a long time to find both of those by the way.
+(if you want both of those together, you need to rethink your targets)
+
+>This is less of that, but maybe the fourth one of those doesn't exist.
 
 ## He should stop shooting, but that's fixable.
 This is bad decision making, not bad shooting.
