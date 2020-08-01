@@ -7,30 +7,31 @@ layout: post
 > Is Pierre-Emile Højbjerg good? Three things:
 
 ## Where he fits
-He has appeared in a double-pivot with James Ward-Prowse, where neither tends to play particularly further forward than the other. Defensive contributions are similar, but Hojbjerg gets significantly more on-ball time than Ward-Prowse and completes more risky, progressive actions.
+He has appeared in a double-pivot with James Ward-Prowse, where neither tends to play particularly further forward than the other. 
 
 ![PEH]({{site.baseurl}}/images/2020-8-1-is-hojbjerg-good/PEH.png) ![JWP]({{site.baseurl}}/images/2020-8-1-is-hojbjerg-good/JWP.png)
-
 > source: football slices
 
-There is good progressive passing volume but that doesn't always translate into the most dangerous passes - into the penalty area.
+This is not Hasenhuttl's first line of defence so off-ball contributions are similar. But Hojbjerg gets significantly more on-ball time than Ward-Prowse and completes more risky, progressive actions.
 
-> (Possession: Targ/90, Rec/90)
-> (Passing:  KP,1/3,PPA,Prog)
-> (Pass Types: Live,TB,Press(shows risky passes))
-> (GCA: SCAPassLive)
+> (Possession: Targ/90, Rec/90) - on ball more
+> (Pass Types: Live,TB,Press(shows risky passes)) - more risky actions
 
-### Sign this player if you want
-more passing and ball progression in your midfield  
+
+There is good shot assist volume all the way until the most dangerous completed passes - into the penalty area.
+
+> (GCA: SCAPassLive, Passing:KP, Prog) - good volume
+> (Passing:1/3,PPA) - most dangerous
+
+#### Sign this player if you want
+more passing and ball progression in your middle third  
 	*and*  
 consistently solid defensive output
 
-### Don't sign this player if you want
-a Kante/Ndidi/Fernandinho that lets you get five attacking players on the pitch  
+#### Don't sign this player if you want
+the next Kante/Ndidi/Fernandinho that lets you get five attacking players on the pitch  
 	*or*  
-a player to put all your centre-of-the-pitch creation through
-
->This is less of that, but maybe the fourth one of those doesn't exist.
+one player to put all your centre-of-the-pitch creation through
 
 ## He should stop shooting, but that's fixable.
 This is bad decision making, not bad shooting.
