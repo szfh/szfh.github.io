@@ -42,15 +42,15 @@ Nonetheless it takes ambition to make a transfer knowing that easier options mig
 ## Sign this player if you want
 
 * more passing and ball progression in your middle third  
-	*and*  
+		**and**  
 * consistently solid defensive output  
-	*and*  
+		**and**  
 * you're not really sure about your manager
 
 ## Don't sign this player if you want
 
 * the next Kante/Ndidi/Gueye that lets you get five attacking players on the pitch  
-	*or*  
+	**or**  
 * one player to put all your centre-of-the-pitch creation through  
-	*or*  
+	**or**  
 * you're trying to build some specific play style
