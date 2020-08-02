@@ -7,10 +7,10 @@ layout: post
 ## Where he fits
 He has appeared in a double-pivot with James Ward-Prowse, where neither tends to play particularly further forward than the other. This is not Ralph Hasenhüttl's first line of defence so off-ball contributions are similar.
 
-![PEH]({{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/PEH.png | width=100) ![JWP]({{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/JWP.png | width=100)
+>![PEH]({{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/PEH.png) ![JWP]({{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/JWP.png)
 
 <center>
-<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/PEH.png" width="60%">
+<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/PEH.png" width="60%"> <img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/JWP.png" width="60%">
 </center>
 
 [*Football Slices*](https://www.footballslices.com/stats/101859)
