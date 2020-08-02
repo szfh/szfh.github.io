@@ -33,7 +33,7 @@ He has comparable passing and shot creation to other similar players, and slight
 <img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/playernogoals.jpg" width="100%">
 </center>
 
-This is bad decision making, not bad shooting. Højbjerg has the skill to do even better in the attacking third by not taking a long shot in most matches.
+This is bad decision making, not bad finishing. Højbjerg has the skill to do even better in the attacking third by not taking a long shot in most matches.
 
 ## He's taken impressive risks to get this transfer
 
@@ -47,7 +47,7 @@ Nonetheless it takes ambition to move away from Bayern when easier options might
 	***and***  
 * consistently solid defensive output  
 	***and***  
-* you're not really sure about your current manager and need something to give to the next one
+* you're not really sure about your current manager
 
 ## Don't sign this player if you want
 
