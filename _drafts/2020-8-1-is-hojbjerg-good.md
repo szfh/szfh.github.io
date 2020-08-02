@@ -14,11 +14,11 @@ He has appeared in a double-pivot with James Ward-Prowse, where neither tends to
 
 This is not Ralph Hasenhüttl's first line of defence so off-ball contributions are similar. But Hojbjerg gets significantly more on-ball time than Ward-Prowse and completes **higher risk actions**, maximising his range of passing.
 
-> risky passes
+![passes]({{site.baseurl}}/images/2020-8-1-is-hojbjerg-good/passes.png)
 
 There is good enough shot assist volume compared to similar mid-table players, particularly of the most dangerous type of pass: **into the opposition penalty area**.
 
-> passing stats
+![sca]({{site.baseurl}}/images/2020-8-1-is-hojbjerg-good/sca.png)
 
 #### Sign this player if you want
 more passing and ball progression in your middle third  
