@@ -9,7 +9,6 @@ He has appeared in a double-pivot with James Ward-Prowse, where neither tends to
 
 <center>
 <img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/PEH.png" width="80%">
-<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/JWP.png" width="80%">
 </center>
 
 [*Football Slices*](https://www.footballslices.com/stats/101859)
@@ -17,18 +16,18 @@ He has appeared in a double-pivot with James Ward-Prowse, where neither tends to
 Højbjerg gets significantly more on-ball time than Ward-Prowse and completes **higher risk actions**, maximising his range of passing.
 
 <center>
-<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/passes.jpg" width="80%">
+<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/passes.jpg" width="100%">
 </center>
 
 There is good enough shot assist volume compared to similar mid-table players, particularly of the most dangerous type of pass: **into the opposition penalty area**.
 
 <center>
-<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/sca.jpg" width="80%">
+<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/sca.jpg" width="100%">
 </center>
 ## He should stop shooting, but that's fixable
 
 <center>
-<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/playernogoals.jpg" width="80%">
+<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/playernogoals.jpg" width="100%">
 </center>
 
 This is bad decision making, not bad shooting. Højbjerg has the skill to do even better by not hitting a long shot in most matches.
