@@ -6,22 +6,19 @@ layout: post
 
 > Is Pierre-Emile Højbjerg good? Three things:
 
-## Where he fits
+## Where he fits.
 He has appeared in a double-pivot with James Ward-Prowse, where neither tends to play particularly further forward than the other. 
 
 ![PEH]({{site.baseurl}}/images/2020-8-1-is-hojbjerg-good/PEH.png) ![JWP]({{site.baseurl}}/images/2020-8-1-is-hojbjerg-good/JWP.png)
 > source: football slices
 
-This is not Hasenhuttl's first line of defence so off-ball contributions are similar. But Hojbjerg gets significantly more on-ball time than Ward-Prowse and completes more risky, progressive actions.
+This is not Ralph Hasenhüttl's first line of defence so off-ball contributions are similar. But Hojbjerg gets significantly more on-ball time than Ward-Prowse and completes **higher risk actions**, maximising his range of passing.
 
-> (Possession: Targ/90, Rec/90) - on ball more
-> (Pass Types: Live,TB,Press(shows risky passes)) - more risky actions
+> risky passes
 
+There is good enough shot assist volume compared to similar mid-table players, particularly of the most dangerous type of pass: **into the opposition penalty area**.
 
-There is good shot assist volume all the way until the most dangerous completed passes - into the penalty area.
-
-> (GCA: SCAPassLive, Passing:KP, Prog) - good volume
-> (Passing:1/3,PPA) - most dangerous
+> passing stats
 
 #### Sign this player if you want
 more passing and ball progression in your middle third  
@@ -34,10 +31,13 @@ the next Kante/Ndidi/Fernandinho that lets you get five attacking players on the
 one player to put all your centre-of-the-pitch creation through
 
 ## He should stop shooting, but that's fixable.
+
+> no-goals chart
+
 This is bad decision making, not bad shooting.
 
-## He's taken impressive risks to get to where he is
-He's played six 1200+ minute PL/Bundesliga seasons.
+## He's taken impressive risks to get to where he is.
+He's played six 1200+ minute PL/Bundesliga seasons
 
 https://fbref.com/en/players/8b04d6c1/Pierre-Hojbjerg
 https://theathletic.com/1934962/
