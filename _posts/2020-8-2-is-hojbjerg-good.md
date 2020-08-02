@@ -4,7 +4,7 @@ output: github_document
 layout: post
 ---
 
-## Where he fits.
+## Where he fits
 He has appeared in a double-pivot with James Ward-Prowse, where neither tends to play particularly further forward than the other. This is not Ralph Hasenhüttl's first line of defence so off-ball contributions are similar.
 
 ![PEH]({{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/PEH.png) ![JWP]({{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/JWP.png)
@@ -18,13 +18,13 @@ There is good enough shot assist volume compared to similar mid-table players, p
 
 ![sca]({{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/sca.jpg)
 
-## He should stop shooting, but that's fixable.
+## He should stop shooting, but that's fixable
 
 ![nogoals]({{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/playernogoals.jpg)
 
 This is bad decision making, not bad shooting. Højbjerg has the skill to do even better by not hitting a long shot in most matches.
 
-## He's taken impressive risks to get this transfer.
+## He's taken impressive risks to get this transfer
 
 Superstars excepted, it's unusual to play 10,000 top 5 league minutes + 20 internationals across before age 25. But having joined a Europa League Southampton in 2016, he's entitled to feel like this leg of his career could have gone a little better.
 
