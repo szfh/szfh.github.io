@@ -5,7 +5,7 @@ layout: post
 ---
 
 ## Where he fits
-He has appeared in a double-pivot with James Ward-Prowse, where neither tends to play particularly further forward than the other. This is not Ralph Hasenhüttl's first line of defence so off-ball contributions are similar.
+
 
 <center>
 <img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/PEH.png" width="80%">
@@ -13,17 +13,20 @@ He has appeared in a double-pivot with James Ward-Prowse, where neither tends to
 
 [*Football Slices*](https://www.footballslices.com/stats/101859)
 
-Højbjerg gets significantly more on-ball time than Ward-Prowse and completes **higher risk actions**, maximising his range of passing.
+He has appeared in a double-pivot with James Ward-Prowse, where neither tends to play particularly further forward than the other. This is not Ralph Hasenhüttl's first line of defence so off-ball contributions are similar.
 
 <center>
 <img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/passes.jpg" width="100%">
 </center>
 
-There is good enough shot assist volume compared to similar mid-table players, particularly of the most dangerous type of pass: **into the opposition penalty area**.
+Højbjerg gets significantly more on-ball time than Ward-Prowse and completes **higher risk actions**, maximising his range of passing.
 
 <center>
 <img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/sca.jpg" width="100%">
 </center>
+
+There is good enough shot assist volume compared to similar mid-table players, particularly of the most dangerous type of pass: **into the opposition penalty area**.
+
 ## He should stop shooting, but that's fixable
 
 <center>
