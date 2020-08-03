@@ -11,8 +11,7 @@ layout: post
 ## Where he fits
 
 <center>
-<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/PEH.png" width="80%">
-
+<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/PEH.png" width="80%">  
 [*Football Slices*](https://www.footballslices.com/stats/101859)
 </center>
 
@@ -40,7 +39,7 @@ This is **bad decision making, not bad finishing**. Højbjerg has the skill to d
 
 ## He's taken impressive risks to get this transfer
 
-Superstars excepted, it's unusual to play 10,000 top division minutes across before age 25. But having [joined Europa League Southampton](https://fcbayern.com/en/news/2016/07/pierre-emile-hojbjerg-joins-southampton-fc) in 2016, he's entitled to feel like this leg of his career could have gone a little better.
+Superstars excepted, it's unusual to play 10,000 top division minutes across before age 25. But having [joined Europa League Southampton](https://fcbayern.com/en/news/2016/07/pierre-emile-hojbjerg-joins-southampton-fc) four years ago, he's entitled to feel like this leg of his career could have gone a little better.
 
 Nonetheless it takes ambition to move away from Bayern when easier options might be on the table.  Now he is positioned for his peak age contract, he can join a club which knows it wants an impressive midfielder, but not *exactly* sure what they want him to do.
 
