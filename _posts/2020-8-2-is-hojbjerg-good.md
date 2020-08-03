@@ -5,7 +5,7 @@ layout: post
 ---
 
 <center>
-<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/peh_bayern.jpg" width="80%">
+<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/peh_bayern.jpg" width="60%">
 </center>
 
 ## Where he fits
