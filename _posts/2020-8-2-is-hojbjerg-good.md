@@ -12,7 +12,7 @@ layout: post
 
 ## Where he fits
 
-He appears in a double-pivot with James Ward-Prowse, where neither tends to play particularly further forward than the other. This is not Ralph Hasenhüttl's first line of defence so off-ball contributions are similar.
+He appears in a double pivot with James Ward-Prowse, where neither tends to play particularly further forward than the other. This is not Ralph Hasenhüttl's first line of defence so off-ball contributions are similar.
 
 <center>
 <img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/passes.jpg" width="100%">
@@ -32,7 +32,7 @@ He has comparable passing and shot creation to other similar players, and slight
 <img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/playernogoals.jpg" width="100%">
 </center>
 
-This is bad decision making, not bad finishing. Højbjerg has the skill to do even better in the attacking third by not taking a long shot in most matches.
+This is **bad decision making, not bad finishing**. Højbjerg has the skill to do even better in the attacking third by not taking a long shot in most matches.
 
 ## He's taken impressive risks to get this transfer
 
