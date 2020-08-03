@@ -12,7 +12,8 @@ layout: post
 
 <center>
 <img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/PEH.png" width="80%">  
-[Football Slices](https://www.footballslices.com/stats/101859)
+[Football Slices](https://www.footballslices.com/stats/101859)  
+[Football Slices](https://www.footballslices.com/)
 </center>
 
 He appears in a double pivot with James Ward-Prowse, where neither tends to play particularly further forward than the other. This is not Ralph Hasenhüttl's first line of defence so off-ball contributions are similar.
