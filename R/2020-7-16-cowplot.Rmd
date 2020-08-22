@@ -4,7 +4,7 @@ output: github_document
 layout: post
 ---
 
-```{r setup}
+```{r setup,include=FALSE}
 knitr::opts_chunk$set(echo=FALSE,include=FALSE)
 library(tidyverse)
 library(cowplot)
@@ -47,7 +47,7 @@ grid1 <- plot_grid(
 grid1
 ```
 
-![annotation-1]({{site.baseurl}}/images/scrape-nicely/annotation-1.png)
+![annotation-1]({{site.baseurl}}/images/2020-7-16-cowplot/annotation-1.png)
 
 *Placing a logo using plot coordinates can be painful.*
 
@@ -93,7 +93,7 @@ grid2
 
 Then call the function with your list of ggplots.
 
-![grid-1]({{site.baseurl}}/images/scrape-nicely/draw-image-1.png)
+![grid-1]({{site.baseurl}}/images/2020-7-16-cowplot/draw-image-1.png)
 
 *Adding a logo with Cowplot will place it neatly where you want.*
 
