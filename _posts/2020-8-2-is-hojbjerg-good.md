@@ -4,6 +4,8 @@ output: github_document
 layout: post
 ---
 
+
+
 <center>
 <img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/peh_bayern.jpg" width="60%">
 </center>
@@ -15,24 +17,31 @@ layout: post
 </center>  
 [*Football Slices*](https://www.footballslices.com/stats/101859)  
 
-He appears in a double pivot with James Ward-Prowse, where neither tends to play particularly further forward than the other. This is not Ralph Hasenhüttl's first line of defence so off-ball contributions are similar.
+
+Højbjerg appears in a double pivot with James Ward-Prowse, where neither tends to play particularly further forward than the other. This is not Ralph Hasenhüttl's first line of defence so off-ball contributions are similar.
+
+
 
 <center>
-<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/passes.jpg" width="100%">
+<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/sca.jpg" width="100%">
 </center>
 
 Højbjerg gets significantly more on-ball time than Ward-Prowse and completes **higher risk actions**, maximising his range of passing.
 
+
+
 <center>
-<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/sca.jpg" width="100%">
+<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/actions.jpg" width="100%">
 </center>
 
 He has comparable passing and shot creation to other similar players, and slightly outperforms them for the most dangerous type of pass - **into the opposition penalty area**.
 
 ## He should stop shooting, but that's fixable
 
+
+
 <center>
-<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/playernogoals.jpg" width="100%">
+<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/nogoals.jpg" width="100%">
 </center>
 
 This is **bad decision making, not bad finishing**. Højbjerg has the skill to do even better in the attacking third by not taking a long shot in most matches.
