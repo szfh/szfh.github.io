@@ -26,4 +26,4 @@ knit_to_site <- function(date,name,loc="drafts",keep_html=FALSE){
 # ezknit(file=here("R","2020-7-16-cowplot.Rmd"),out_dir=posts,fig_dir=here("images","cowplot"),keep_html=FALSE)
 # ezknit(file=here("R","2020-8-13-example-fbref-plots.Rmd"),out_dir=drafts,fig_dir=here("images","example-fbref-plots"),keep_html=FALSE)
 
-# knit_to_site("2020-7-16","cowplot","tests")
+# knit_to_site("2020-7-16","cowplot","posts")
