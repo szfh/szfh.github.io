@@ -12,6 +12,5 @@ package.json
 *.Rproj
 .Rproj.user
 
-/R/
 /data/
 /_tests/
