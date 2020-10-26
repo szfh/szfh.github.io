@@ -1,0 +1,276 @@
+---
+title: "Is Pierre-Emile Højbjerg good?"
+output: github_document
+layout: post
+---
+
+```{r setup,include=FALSE}
+knitr::opts_chunk$set(echo=FALSE,include=FALSE)
+library(tidyverse)
+library(magrittr)
+library(cowplot)
+library(here)
+library(janitor)
+library(png)
+library(grid)#
+library(glue)
+library(ggthemes)
+library(ggrepel)
+
+# source(here("..","football-stats","R","raw","raw-utils.R"))
+# source(here("..","football-stats","R","plot","plot-utils.R"))
+# source(here("..","football-stats","R","themes.R"))
+
+fbref <- readRDS(here("data","2020-8-2-fbref-raw.rds"))
+
+fbref <- fbref %>%
+  mutate(data=pmap(list(data,page,stattype), possibly(fbref_tidy, otherwise=NA))) %>%
+  select(-any_of(c("statselector","seasoncode","page_url","content_selector_id")))
+
+table <-
+  fbref %>%
+  filter(page=="league") %>%
+  select(-page,-stattype) %>%
+  unnest(cols=data)
+
+squad <-
+  fbref %>%
+  filter(page=="squad") %>%
+  select(-page) %>%
+  unnest(cols=data) %>%
+  group_by(stattype) %>%
+  nest() %>%
+  mutate(data=map(data,remove_empty,which="cols")) %$%
+  data %>%
+  reduce(full_join)
+
+squad <-
+  table %>%
+  left_join(squad)
+
+players <-
+  fbref %>%
+  filter(page=="player") %>%
+  select(-page) %>%
+  unnest(cols=data) %>%
+  group_by(stattype) %>%
+  nest() %>%
+  mutate(data=map(data,remove_empty,which="cols")) %$%
+  data %>%
+  reduce(full_join)
+
+sqpo <- squad %>%
+  filter(season=="2019-20") %>%
+  select(squad,poss)
+
+plots <- list()
+
+# source(here("R","plot","2020-8-2-themes.R"))
+# source(here("..","football-stats","R","plot","plot-functions.R"))
+```
+
+<center>
+<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/peh_bayern.jpg" width="60%">
+</center>
+
+## Where he fits
+
+<center>
+<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/PEH.png" width="80%">  
+</center>  
+[*Football Slices*](https://www.footballslices.com/stats/101859)  
+
+
+Højbjerg appears in a double pivot with James Ward-Prowse, where neither tends to play particularly further forward than the other. This is not Ralph Hasenhüttl's first line of defence so off-ball contributions are similar.
+
+```{r sca}
+plots <- list()
+plots$sca <-
+  players %>%
+  left_join(sqpo) %>%
+  select(
+    season:born,
+    poss,
+    starts=playing_time_starts,
+    mp=playing_time_mp,
+    mins=playing_time_min,
+    scapass=sca_types_passlive,
+    kp,
+    finalthird=`13`,
+    ppa,
+    totdist=total_totdist,
+    prgdist=total_prgdist
+  ) %>%
+  filter(season=="2019-20") %>%
+  filter(pos1=="MF" | pos2=="MF") %>%
+  mutate(across(c("scapass":"prgdist"),~(.x*(90/mins)*((100-poss)/50)))) %>%
+  filter(mins>=1200) %>%
+  make_long_data(levels=c("scapass","finalthird","ppa","prgdist","totdist"),labels=c("Shot Creating Passes (open play)","Passes to Final Third","Passes to Penalty Area","Passing Yards - Progressive","Passing Yards - Total")) %>%
+  mutate(focus=ifelse(player %in%
+                        c(
+                          "Pierre Højbjerg",
+                          "James Ward-Prowse",
+                          "James McArthur",
+                          "Declan Rice",
+                          "André Gomes",
+                          "Philip Billing",
+                          "João Moutinho",
+                          "Ashley Westwood",
+                          "Dan Gosling"
+                        ),TRUE,FALSE)) %>%
+  mutate(squad=ifelse(focus,squad,"Other")) %>%
+  ggplot(aes(x=0,y=n)) +
+  geom_text_repel(
+    aes(label=ifelse(focus,player,"")),
+    size=2.5,
+    nudge_x=0.3,
+    direction="y",
+    hjust=0,
+    segment.size=0.4,
+    segment.alpha=0.8,
+    box.padding=0.05
+  ) +
+  geom_point(aes(fill=squad,alpha=focus),shape=23,size=2.5) +
+  theme[["solarfacet"]]() +
+  theme(
+    strip.text=element_text(size=7)
+  ) +
+  facet_wrap("key",scales="free") +
+  labs(
+    title="Midfield passing 2019-20",
+    x=element_blank(),
+    y=element_blank(),
+    caption="Shot Creating Passes are the two actions directly leading to a shot | Possession adjusted | Similar players highlighted"
+  ) +
+  scale_x_continuous(limit=c(0,1)) +
+  scale_y_continuous() +
+  scale_fill_manual(values=palette[["epl"]]()) +
+  scale_alpha_manual(values=c("TRUE"=1,"FALSE"=0.1))
+
+plots_wm <- add_watermark(plots,path=here("images","SB_Regular.png"))
+save_plots(plots_wm,path=here("images","2020-8-2-is-hojbjerg-good/"))
+```
+
+<center>
+<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/sca.jpg" width="100%">
+</center>
+
+Højbjerg gets significantly more on-ball time than Ward-Prowse and completes **higher risk actions**, maximising his range of passing.
+
+```{r actions}
+plots <- list()
+plots$actions <-
+  players %>%
+  left_join(sqpo) %>%
+  select(
+    season:born,
+    poss,
+    starts=playing_time_starts,
+    mp=playing_time_mp,
+    mins=playing_time_min,
+    targ=receiving_targ,
+    rec=receiving_rec,
+    pass_live=pass_types_live,
+    pass_tb=pass_types_tb,
+    pass_press=pass_types_press
+  ) %>%
+  filter(season=="2019-20") %>%
+  filter(pos1=="MF" | pos2=="MF") %>%
+  mutate(pass_press_pc=100*pass_press/pass_live) %>%
+  mutate(across(c("targ":"pass_press"),~(.x*(90/mins)*((100-poss)/50)))) %>%
+  filter(mins>=900) %>%
+  mutate(
+    focus1=case_when(
+      player=="Pierre Højbjerg" ~ "peh",
+      (0.9*pass_live + 1.28*pass_press_pc)>=74 ~ "players",
+      TRUE ~ "all"
+    )) %>%
+  mutate(focus2=ifelse(player=="Pierre Højbjerg",TRUE,FALSE)) %>%
+  mutate(squad=ifelse(focus1 %in% c("peh","players"),squad,"Other")) %>%
+  ggplot(aes(x=pass_live,y=pass_press_pc)) +
+  geom_text_repel(
+    aes(label=ifelse(focus1 %in% c("peh","players"),player,"")),
+    size=2.5,
+  ) +
+  geom_point(aes(fill=squad,colour=focus1,alpha=focus1),shape=23,size=3) +
+  theme[["solar"]]() +
+  labs(
+    title="Midfield passing under pressure 2019-20",
+    x="Open play passes per 90 mins (possession adjusted)",
+    y="Passes under pressure %"
+  ) +
+  scale_fill_manual(values=palette[["epl"]]()) +
+  scale_colour_manual(values=c("peh"="black","players"=colour$sfc[["solar"]],"all"=colour$sfc[["solar"]])) +
+  scale_alpha_manual(values=c("peh"=1,"players"=0.6,"all"=0.4)) +
+  scale_x_continuous(expand=expansion(add=c(1,12))) +
+  scale_y_continuous(expand=expansion(add=c(4,2)))
+
+plots_wm <- add_watermark(plots,path=here("images","SB_Regular.png"))
+save_plots(plots_wm,path=here("images","2020-8-2-is-hojbjerg-good/"))
+```
+
+<center>
+<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/actions.jpg" width="100%">
+</center>
+
+He has comparable passing and shot creation to other similar players, and slightly outperforms them for the most dangerous type of pass - **into the opposition penalty area**.
+
+## He should stop shooting, but that's fixable
+
+```{r no-goals}
+plots <- list()
+plots$nogoals <-
+  players %>%
+  filter_season %>% 
+  select(player,squad,sh=standard_sh,gls=standard_gls,npxg=expected_npxg) %>%
+  filter(gls==0) %>%
+  mutate(focus=case_when(percent_rank(sh)>0.92 ~ TRUE,
+                         percent_rank(npxg)>0.92 ~ TRUE,
+                         TRUE ~ FALSE
+  )) %>%
+  mutate(squad=ifelse(focus,squad,"Other")) %>%
+  ggplot(aes(x=npxg,y=sh)) +
+  geom_text_repel(aes(label=ifelse(focus,player,"")),size=2,position=position_jitter(width=0.05,height=0.2,seed=2)) +
+  geom_point(aes(fill=squad,alpha=focus),size=2,shape=23,colour="black",position=position_jitter(width=0.05,height=0.2,seed=2)) +
+  theme[["solar"]]() +
+  labs(
+    title="Who hasn't scored yet?",
+    x="Expected goals",
+    y="Shots"
+  ) +
+  scale_fill_manual(values=palette[["epl"]]()) +
+  scale_x_continuous(breaks=seq(0,50,1),expand=expansion(add=c(0,0.2))) +
+  scale_y_continuous(breaks=seq(0,200,5),expand=expansion(add=c(0,2))) +
+  scale_alpha_manual(values=c("TRUE"=1,"FALSE"=0.2))
+
+plots_wm <- add_watermark(plots,path=here("images","SB_Regular.png"))
+save_plots(plots_wm,path=here("images","2020-8-2-is-hojbjerg-good/"))
+```
+
+<center>
+<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/nogoals.jpg" width="100%">
+</center>
+
+This is **bad decision making, not bad finishing**. Højbjerg has the skill to do even better in the attacking third by not taking a long shot in most matches.
+
+## He's taken impressive risks to get this transfer
+
+Superstars excepted, it's unusual to play 10,000 top division minutes across before age 25. But having [joined Europa League Southampton](https://fcbayern.com/en/news/2016/07/pierre-emile-hojbjerg-joins-southampton-fc) four years ago, he's entitled to feel like this leg of his career could have gone a little better.
+
+Nonetheless it takes ambition to move away from Bayern when easier options might be on the table.  Now he is positioned for his peak age contract, he can join a club which knows it wants an impressive midfielder, but not *exactly* sure what they want him to do.
+
+## Sign this player if you want
+
+* more passing and ball progression in your middle third  
+	***and***  
+* consistently solid defensive output  
+	***and***  
+* you're not really sure about your current manager
+
+## Don't sign this player if you want
+
+* the next Kante/Ndidi/Gueye that lets you get five attacking players on the pitch  
+	***or***  
+* one player to put all your centre-of-the-pitch creation through  
+	***or***  
+* you're trying to build some specific play style

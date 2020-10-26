@@ -1,0 +1,41 @@
+---
+title: "Example fbref plots"
+output: github_document
+layout: post
+---
+
+```{r setup,include=FALSE}
+knitr::opts_chunk$set(echo=FALSE,include=FALSE)
+# library(tidyverse)
+# library(cowplot)
+# library(here)
+# library(png)
+# library(grid)
+require(tidyverse)
+require(magrittr)
+require(rvest)
+require(glue)
+require(ggformula) # for geom_spline
+require(ggtext) # for markdown in plots - https://github.com/wilkelab/ggtext
+
+# github_path <- here("images","github64.png")
+# github <- rasterGrob(readPNG(github_path))
+
+# plots <- list()
+# plots$p1 <-
+#   mtcars %>%
+#   ggplot(aes(x=cyl,y=hp)) +
+#   geom_point() +
+#   theme_bw() +
+#   expand_limits(x=c(2,10),y=c(0,400))
+
+# plots$p2 <-
+#   mtcars %>%
+#   ggplot(aes(x=mpg,y=disp)) +
+#   geom_point() +
+#   theme_bw() +
+#   expand_limits(x=c(8),y=c(0,500))
+```
+
+## Title 1
+Text 1
