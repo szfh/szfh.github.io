@@ -213,8 +213,8 @@ matches_team %>%
 
 ## Refs/acknowledgements
 
-[acciotables](https://github.com/npranav10/acciotables) by [Pranav N](https://twitter.com/npranav10)
-[Statsbomb](https://statsbomb.com/) for providing the data which is hosted by...
+[acciotables](https://github.com/npranav10/acciotables) by [Pranav N](https://twitter.com/npranav10)  
+[Statsbomb](https://statsbomb.com/) for providing the data which is hosted by...  
 [FBRef](https://fbref.com/en/)
 Various people for testing
 
