@@ -202,7 +202,7 @@ matches_team %>%
 ```
 
 <center>
-<img src="{{site.baseurl}}/images/2020-10-13-fbref-data-viz/plot.jpg" width="100%">
+<img src="{{site.baseurl}}/images/2020-10-28-fbref-data-viz/plot.jpg" width="100%">
 </center>
 
 And that's it! 
