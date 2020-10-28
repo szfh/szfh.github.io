@@ -298,15 +298,8 @@ matches_team %>%
   scale_y_continuous(limits=c(0,NA),expand=expansion(add=c(0,0.1)))
 ```
 
-```
-## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
-## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
-```
-
-![plot of chunk plot](H:/Projects/szfh.github.io/images/2020-10-28-fbref-data-viz/plot-1.png)
-
 <center>
-<img src="{{site.baseurl}}/images/2020-10-28-fbref-data-viz/plot.jpg" width="100%">
+<img src="{{site.baseurl}}/images/2020-10-28-fbref-data-viz/plot-1.png" width="100%">
 </center>
 
 And that's it! 
