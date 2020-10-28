@@ -25,4 +25,4 @@ knit_to_site <- function(date,name,loc="drafts",keep_html=FALSE){
 
 # knit_to_site("2020-7-16","cowplot","posts")
 # knit_to_site("2020-8-2","is-hojbjerg-good","posts")
-knit_to_site("2020-10-13","fbref-data-viz","drafts")
+# knit_to_site("2020-10-28","fbref-data-viz","posts")
