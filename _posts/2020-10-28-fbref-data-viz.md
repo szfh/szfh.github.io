@@ -303,26 +303,23 @@ matches_team %>%
 ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
 ```
 
-![plot of chunk plot](H:/Projects/szfh.github.io/images/2020-10-13-fbref-data-viz/plot-1.png)
+![plot of chunk plot](H:/Projects/szfh.github.io/images/2020-10-28-fbref-data-viz/plot-1.png)
 
 <center>
-<img src="{{site.baseurl}}/images/2020-10-13-fbref-data-viz/plot.jpg" width="100%">
+<img src="{{site.baseurl}}/images/2020-10-28-fbref-data-viz/plot.jpg" width="100%">
 </center>
 
-## Further reading
+And that's it! 
 
+## Further reading / refs / acknowledgements
 * [Link to the complete script](https://gist.github.com/szfh/a20f15d0c110898dcff5f4708f5ee630)
-* [R Graph Gallery](https://www.r-graph-gallery.com/) for more viz ideas
-* Need help? Probably best to [tweet at me](https://twitter.com/saintsbynumbers)
-
-## Refs/acknowledgements
-
-[acciotables](https://github.com/npranav10/acciotables) by [Pranav N](https://twitter.com/npranav10)
-[Statsbomb](https://statsbomb.com/) for providing the data which is hosted by...
+* [acciotables](https://github.com/npranav10/acciotables) by [Pranav N](https://twitter.com/npranav10
+* [Statsbomb](https://statsbomb.com/) for providing the data which is hosted by...
 [FBRef](https://fbref.com/en/)
 Various people for testing
+* [R Graph Gallery](https://www.r-graph-gallery.com/) for more viz ideas
+* Need help? Probably best to [tweet at me](https://twitter.com/saintsbynumbers)
 
 ## One more thing
 
 It's friendly to give credit to the data providers at Statsbomb and FBRef. Statsbomb's media guide is here. If you want to add their logos to your images, [you can use Cowplot for that](https://szfh.github.io/cowplot/).
-
