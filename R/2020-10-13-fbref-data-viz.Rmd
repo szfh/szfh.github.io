@@ -25,9 +25,9 @@ This standalone script will produce a dataset and visualisation to use as a star
 
 ## Getting data with the acciotables API
 
-FBRef stores a summary of all 380 matches in a [single html table](https://fbref.com/en/comps/9/3232/schedule). We just need to get the page url and table id, and acciotables will give us the data in a nice format.
+FBRef stores a summary of all 380 matches in a [single html table](https://fbref.com/en/comps/9/3232/schedule). We just need the `page_url` and `selector_id`, and acciotables will produce the data in a nice html format.
 
-Looking in the page source gives the table id: **%23sched_ks_3232_1**
+Looking in the page source gives the `selector_id`: **%23sched_ks_3232_1**
 
 ```{r data, echo=TRUE, include=TRUE}
 page_url <- "https://fbref.com/en/comps/9/3232/schedule/"
@@ -37,11 +37,11 @@ url <- paste0("http://acciotables.herokuapp.com/?page_url=",page_url,"&content_s
 print(paste0("API url: ",url))
 ```
 
-You can check the API is working in your [browser](`r url`).
+Check the API is working in your [browser](`r url`).
 
 ## Importing into R
 
-The [acciotables readme](https://github.com/npranav10/acciotables/#-calling-the-api-in-r) tells us what to do.
+There's a guide in the [acciotables readme](https://github.com/npranav10/acciotables/#-calling-the-api-in-r).
 
 ```{r import, echo=TRUE, include=TRUE}
 matches <- url %>%
@@ -56,7 +56,7 @@ head(matches)
 
 There's a few things to sort out to make the raw data more usable.
 
-* There are two columns called "xG". That is definitely going to make something go wrong.
+* There are two columns called `xG`. That is definitely going to make something go wrong.
 
 ```{r fix-names}
 names(matches) <-
@@ -90,7 +90,7 @@ matches <-
 head(matches)
 ```
 
-* The `Score` column looks something like *3-1*. We want two columns: home goals and away goals.
+* The `Score` column looks something like **4-1**. We want two columns: home goals and away goals.
 
 ```{r separate}
 matches <-
@@ -151,7 +151,7 @@ head(matches_long)
 dim(matches_long)
 ```
 
-Now there should be 760 rows, one for each team in each match.
+Now there are 760 rows, one for each team in each match.
 
 ## Filter
 
