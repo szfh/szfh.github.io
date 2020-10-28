@@ -12,9 +12,9 @@ This standalone script will produce a dataset and visualisation to use as a star
 
 ## Getting data with the acciotables API
 
-FBRef stores a summary of all 380 matches in a [single html table](https://fbref.com/en/comps/9/3232/schedule). We just need to get the page url and table id, and acciotables will give us the data in a nice format.
+FBRef stores a summary of all 380 matches in a [single html table](https://fbref.com/en/comps/9/3232/schedule). We just need the `page_url` and `selector_id`, and acciotables will produce the data in a nice html format.
 
-Looking in the page source gives the table id: **%23sched_ks_3232_1**
+Looking in the page source gives the `selector_id`: **%23sched_ks_3232_1**
 
 
 ```r
@@ -29,11 +29,11 @@ print(paste0("API url: ",url))
 ## [1] "API url: http://acciotables.herokuapp.com/?page_url=https://fbref.com/en/comps/9/3232/schedule/&content_selector_id=%23sched_ks_3232_1"
 ```
 
-You can check the API is working in your [browser](http://acciotables.herokuapp.com/?page_url=https://fbref.com/en/comps/9/3232/schedule/&content_selector_id=%23sched_ks_3232_1).
+Check the API is working in your [browser](http://acciotables.herokuapp.com/?page_url=https://fbref.com/en/comps/9/3232/schedule/&content_selector_id=%23sched_ks_3232_1).
 
 ## Importing into R
 
-The [acciotables readme](https://github.com/npranav10/acciotables/#-calling-the-api-in-r) tells us what to do.
+There's a guide in the [acciotables readme](https://github.com/npranav10/acciotables/#-calling-the-api-in-r).
 
 
 ```r
@@ -66,7 +66,7 @@ head(matches)
 
 There's a few things to sort out to make the raw data more usable.
 
-* There are two columns called "xG". That is definitely going to make something go wrong.
+* There are two columns called `xG`. That is definitely going to make something go wrong.
 
 
 ```r
@@ -123,7 +123,7 @@ head(matches)
 ## 6  1 Sat 2019-08-10 15:00 (14:00) Crystal Palace    0.7   0–0    1.0         Everton
 ```
 
-* The `Score` column looks something like *3-1*. We want two columns: home goals and away goals.
+* The `Score` column looks something like **4-1**. We want two columns: home goals and away goals.
 
 
 ```r
@@ -245,7 +245,7 @@ dim(matches_long)
 ## [1] 760  17
 ```
 
-Now there should be 760 rows, one for each team in each match.
+Now there are 760 rows, one for each team in each match.
 
 ## Filter
 
