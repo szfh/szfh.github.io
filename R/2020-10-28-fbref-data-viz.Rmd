@@ -179,7 +179,7 @@ matches_team <-
 
 Lots of ways to do this, here's a ggplot with some lines, some points, a theme, and some slightly better labels made with ggtext.
 
-```{r plot}
+```{r plot, echo=FALSE}
 matches_team %>%
   ggplot(aes(x=Match,group=1)) +
   geom_point(aes(y=xGF),size=2,colour="black",fill="darkred",shape=21) +
@@ -202,7 +202,7 @@ matches_team %>%
 ```
 
 <center>
-<img src="{{site.baseurl}}/images/2020-10-28-fbref-data-viz/plot.jpg" width="100%">
+<img src="{{site.baseurl}}/images/2020-10-28-fbref-data-viz/plot-1.jpg" width="100%">
 </center>
 
 And that's it! 
