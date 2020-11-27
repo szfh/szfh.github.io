@@ -1,10 +1,11 @@
 pre,
 code {
-    font-size: 15px;
-	background-color: #fdf6e3;
+	background-color: #efefef;
 	padding: 1px 5px;
     border: 1px solid #ddd;
-    border-radius: 3px;
+	-moz-box-shadow: 1px 1px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 1px 1px rgba(0,0,0,0.1);
+	box-shadow: 1px 1px rgba(0,0,0,0.1);
 	margin: 10px 0 10px 0;
 	overflow: auto;
 }
