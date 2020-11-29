@@ -7,7 +7,7 @@ editor_options:
 ---
 
 ```{r setup,include=FALSE}
-knitr::opts_chunk$set(echo=TRUE,include=TRUE)
+knitr::opts_chunk$set(echo=FALSE,include=FALSE)
 # require(tidyverse)
 # require(magrittr)
 # require(rvest)
@@ -33,7 +33,7 @@ fbref have added opposition stats to their summary pages for the 2020-21 season.
 
 I am interested in alternative ways to look at Passes per Defensive Action - a commonly used measurement of pressing. Here I have calculated **Press Intensity** as **Opposition Touches** per **Pressure**. The pitch is split into thirds to show press style in different parts of the field (and because that is what fbref gives me). I have used touches instead of passes because it's more intuitive that an individual posssession would be pressured (or not). The difference is marginal.
 
-```{r pressintensity, include=TRUE}
+```{r pressintensity}
 labels <- tribble(
   ~"squad",~"n",~"key",~"pos",~"label",
   "Leicester City",2.5,"Defensive Third","FW","Leicester's FWs\nrelieve pressure by\nstaying forward",
