@@ -29,11 +29,65 @@ fbref <- data$fbref
 plots <- list()
 ```
 
-fbref have added opposition stats to their summary pages for the 2020-21 season. That opens up a world of new analysis.
+[*FBref*](https://fbref.com/en/) have added opposition stats to their summary pages for the 2020-21 season. That opens up a world of new analysis.
 
-I am interested in alternative ways to look at Passes per Defensive Action - a commonly used measurement of pressing. Here I have calculated **Press Intensity** as **Opposition Touches** per **Pressure**. The pitch is split into thirds to show press style in different parts of the field (and because that is what fbref gives me). I have used touches instead of passes because it's more intuitive that an individual posssession would be pressured (or not). The difference is marginal.
+I am interested in alternative ways to look at Passes per Defensive Action - a commonly used measurement of pressing. Here I have calculated **Opposition Touches** per **Pressure**. The pitch is split into thirds to show press style in different parts of the field (and because that is what FBref gives me). FBRef defines an individual control, dribble and pass as one touch. It's intuitive that this event is what will be pressured (maybe more than once), so I have used it instead of passes.
 
-```{r pressintensity}
+```{r press-intensity}
+plots$pressintensity <-
+  fbref$squad %>%
+  filter(season=="2020-21") %>%
+  select(squad,vs,pass_types_live,pressures_press,pressures_def_3rd:pressures_att_3rd,touches_live,touches_def_3rd:touches_att_3rd) %>%
+  mutate(squad=case_when(
+    vs ~ str_sub(squad,4),
+    TRUE ~ squad
+  )) %>%
+  mutate(vs=case_when(
+    vs ~ "vs",
+    TRUE ~ ""
+  )) %>%
+  pivot_wider(names_from=vs,values_from=pass_types_live:touches_att_3rd) %>%
+  mutate(
+    def3rd=pressures_def_3rd_/touches_def_3rd_vs,
+    mid3rd=pressures_mid_3rd_/touches_mid_3rd_vs,
+    att3rd=pressures_att_3rd_/touches_att_3rd_vs
+  ) %>%
+  make_long_data(levels=c("def3rd","mid3rd","att3rd"),labels=c("Defensive Third","Middle Third","Attacking Third")) %>%
+  # glimpse
+  ggplot(aes(x=0,y=n)) +
+  geom_text_repel(
+    aes(label=squad),
+    size=2.5,
+    nudge_x=0.5,
+    direction="y",
+    hjust=0,
+    segment.size=0.4,
+    segment.alpha=0.8,
+    box.padding=0.05
+  ) +
+  geom_point(aes(fill=squad),size=3,shape=21,colour="black") +
+  theme[["solarfacet"]]() +
+  facet_wrap("key",scales="fixed") +
+  labs(
+    title="Press intensity",
+    x=element_blank(),
+    y=element_blank(),
+    caption="percentage of opposition ball possessions put under pressure | control-dribble-offload = single possession"
+  ) +
+  scale_x_continuous(limit=c(0,1)) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  scale_fill_manual(values=palette[["epl"]]())
+```
+
+<center>
+<img src="{{site.baseurl}}/images/2020-11-19-press-intensity/pressintensity.jpg" width="100%">
+</center>
+
+Pressures can be broken down by player position. A pressure 40 yards from goal by a forward is different to one by a midfielder, this difference can tell us something different about playing style than PPDA.
+
+Limitation: This is the position as given by FBref (DF/MF/FW), if a player plays out of position it may cause unusual numbers. Breaking down further (CB/FB) would give more information but add to complexity and reduce statistical size.
+
+```{r press-position}
 labels <- tribble(
   ~"squad",~"n",~"key",~"pos",~"label",
   "Leicester City",2.5,"Defensive Third","FW","Leicester's FWs\nrelieve pressure by\nstaying forward",
@@ -43,7 +97,7 @@ labels <- tribble(
 ) %>%
   mutate(across(c(squad,key,pos),factor))
 
-plots$pressintensity <-
+plots$pressposition <-
   fbref$players %>%
   filter(season=="2020-21") %>%
   select(player,squad,pos1,pos2,mp=playing_time_mp,min=playing_time_min,press=pressures_press,def3rd=pressures_def_3rd,mid3rd=pressures_mid_3rd,att3rd=pressures_att_3rd) %>%
@@ -97,5 +151,7 @@ save_plots(plots_logo,path=here("images","2020-11-19-press-intensity"))
 ```
 
 <center>
-<img src="{{site.baseurl}}/images/2020-11-19-press-intensity/pressintensity.jpg" width="100%">
+<img src="{{site.baseurl}}/images/2020-11-19-press-intensity/pressposition.jpg" width="100%">
 </center>
+
+*Data for 2020-21 season to Matchweek 9*
