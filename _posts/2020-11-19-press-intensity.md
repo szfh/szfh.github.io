@@ -15,5 +15,5 @@ I am interested in alternative ways to look at Passes per Defensive Action - a c
 
 
 <center>
-<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/pressintensity.jpg" width="100%">
+<img src="{{site.baseurl}}/images/2020-11-19-press-intensity/pressintensity.jpg" width="100%">
 </center>
