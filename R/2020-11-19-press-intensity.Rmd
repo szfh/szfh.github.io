@@ -97,5 +97,5 @@ save_plots(plots_logo,path=here("images","2020-11-19-press-intensity"))
 ```
 
 <center>
-<img src="{{site.baseurl}}/images/2020-8-2-is-hojbjerg-good/pressintensity.jpg" width="100%">
+<img src="{{site.baseurl}}/images/2020-11-19-press-intensity/pressintensity.jpg" width="100%">
 </center>
