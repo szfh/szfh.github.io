@@ -8,21 +8,10 @@ editor_options:
 
 ```{r setup,include=FALSE}
 knitr::opts_chunk$set(echo=FALSE,include=FALSE)
-# require(tidyverse)
-# require(magrittr)
-# require(rvest)
-# require(janitor)
-# require(glue)
-# require(here)
-# require(ggformula) # for geom_spline
-# require(ggtext) # for markdown in plots - https://github.com/wilkelab/ggtext
-
 source(here::here("..","football-stats","R","library.R"))
 source(here("..","football-stats","R","join","join.R"))
 source(here("..","football-stats","R","themes.R"))
 source(here("..","football-stats","R","plot","plot-utils.R"))
-
-# source(glue("{dirname(here())}/football-stats/R/join/join.R"))
 
 data <- join(fbref=readRDS(here("data","2020-11-19-fbref.rds")),understat=NA,canpl=NA)
 fbref <- data$fbref
