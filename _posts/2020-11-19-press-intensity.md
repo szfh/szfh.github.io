@@ -10,7 +10,7 @@ editor_options:
 
 [*FBref*](https://fbref.com/en/) have added opposition stats to their summary pages for the 2020-21 season. That opens up a world of new analysis.
 
-I am interested in alternative ways to look at Passes per Defensive Action - a commonly used measurement of pressing. Here I have calculated **Opposition Touches** per **Pressure**. The pitch is split into thirds to show press style in different parts of the field (and because that is what FBref gives me). FBRef defines an individual control, dribble and pass as one touch. It's intuitive that this event is what will be pressured (maybe more than once), so I have used it instead of passes.
+I am interested in alternative ways to look at Passes per Defensive Action - a commonly used measurement of pressing. Here I have calculated **Opposition Touches** per **Pressure**. The pitch is split into thirds to show press style in different parts of the field (and because that is what *FBref* gives me). *FBref* defines an individual control, dribble and pass as one touch. It's intuitive that this event is what will be pressured (maybe more than once), so I have used it instead of passes.
 
 
 
@@ -18,9 +18,11 @@ I am interested in alternative ways to look at Passes per Defensive Action - a c
 <img src="{{site.baseurl}}/images/2020-11-19-press-intensity/pressintensity.jpg" width="100%">
 </center>
 
+## Pressures by Position
+
 Pressures can be broken down by player position. A pressure 40 yards from goal by a forward is different to one by a midfielder, this difference can tell us something different about playing style than PPDA.
 
-Limitation: This is the position as given by FBref (DF/MF/FW), if a player plays out of position it may cause unusual numbers. Breaking down further (CB/FB) would give more information but add to complexity and reduce statistical size.
+***Limitation***: This is the position as given by *FBref* (DF/MF/FW), if a player plays out of position it may cause unusual numbers. Breaking down further (CB/FB) would give more information but add to complexity and reduce statistical size.
 
 
 
@@ -29,3 +31,7 @@ Limitation: This is the position as given by FBref (DF/MF/FW), if a player plays
 </center>
 
 *Data for 2020-21 season to Matchweek 9*
+
+## Source Code
+
+Compiled in R Markdown, available [*here*](https://github.com/szfh/szfh.github.io/blob/master/R/2020-11-19-press-intensity.Rmd).
