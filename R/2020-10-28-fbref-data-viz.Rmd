@@ -5,7 +5,7 @@ layout: post
 ---
 
 ```{r setup,include=FALSE}
-knitr::opts_chunk$set(echo=TRUE,include=TRUE)
+knitr::opts_chunk$set(echo=TRUE,include=TRUE,message=FALSE)
 require(tidyverse)
 require(magrittr)
 require(rvest)
