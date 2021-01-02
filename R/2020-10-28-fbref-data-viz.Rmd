@@ -206,7 +206,7 @@ ggsave(here("images","2020-10-28-fbref-data-viz","plot-1.jpg"),dpi=600)
 ```
 
 <center>
-<img src="{{site.baseurl}}/images/2020-10-28-fbref-data-viz/plot-1.png" width="80%">
+<img src="{{site.baseurl}}/images/2020-10-28-fbref-data-viz/plot-1.jpg" width="80%">
 </center>
 
 ## Further reading / references / acknowledgements
