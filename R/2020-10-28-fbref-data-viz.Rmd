@@ -9,6 +9,7 @@ knitr::opts_chunk$set(echo=TRUE,include=TRUE,message=FALSE)
 require(tidyverse)
 require(magrittr)
 require(rvest)
+require(here)
 require(ggformula) # for geom_spline
 require(ggtext) # for markdown in plots - https://github.com/wilkelab/ggtext
 require(gt)
@@ -45,9 +46,6 @@ matches_import <- url %>%
   extract2(1) # unnest the data_frame from the list
 
 head(matches_import)
-# print(head(matches))
-# format(head(matches_import))
-# gt(head(matches))
 ```
 
 ## Tidy the data
@@ -116,14 +114,14 @@ This is much easier to work with, but there's one more change that will help a l
 
 [Tidy data has one observation per row](https://tidyr.tidyverse.org/articles/tidy-data.html#tidy-data). Each line in this table has two independent(ish) observations: *home score* and *away score*. By transforming to long (as opposed to wide) format, working with the data becomes much easier.
 
-What's happening here is:
+What's happening here:
 
-* A pivot_longer implementation to separate home and away
-* The original `matches` data frame joined back to the new data - a bit of a trick to get sort of metadata, for filtering or labelling. Don't worry too much about this if it doesn't make sense.
-* Then if_else to sort out the rest of the home/away data.
+* `pivot_longer` to separate home and away into two rows.
+* The original `matches` data frame joined back to the new data - a bit of a trick to get a sort of metadata, for filtering or labelling. Don't worry too much about this if it doesn't make sense.
+* Then `if_else` to sort out the rest of the home/away data.
 * The columns used in the final plot are relocated to the left to make it easier to see.
 
-That's all in a function called `make_long_matches` for good practice.
+This is a useful transformation so it's all in a function called `make_long_matches`.
 
 ```{r}
 make_long_matches <- function(matches){
@@ -179,7 +177,7 @@ matches_team <-
 
 ## Plot
 
-Lots of ways to do this, here's a ggplot with some lines, some points, a theme, and some slightly better labels made with ggtext.
+Lots of ways to do this, here's a ggplot with some lines, some points, a theme, and some slightly better labels made with `ggtext`.
 
 ```{r plot, eval=FALSE}
 matches_team %>%
@@ -201,6 +199,10 @@ matches_team %>%
   ) +
   scale_x_discrete(expand=expansion(add=c(0.5))) +
   scale_y_continuous(limits=c(0,NA),expand=expansion(add=c(0,0.1)))
+```
+
+```{r save, echo=FALSE, include=FALSE, eval=TRUE}
+ggsave(here("images","2020-10-28-fbref-data-viz","plot-1.jpg"),dpi=600)
 ```
 
 <center>
