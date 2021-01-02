@@ -2,7 +2,7 @@ library(ezknitr)
 library(here)
 library(glue)
 
-ls("package:ezknitr")
+# ls("package:ezknitr")
 # https://github.com/ropensci/ezknitr#ezknitr---avoid-the-typical-working-directory-pain-when-using-knitr
 
 # drafts <- here("_drafts")
