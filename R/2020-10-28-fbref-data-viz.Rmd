@@ -1,22 +1,17 @@
 ---
-title: "Getting and using xG data from FBRef"
+title: "Using xG data from FBref"
 output: github_document
 layout: post
 ---
 
 ```{r setup,include=FALSE}
 knitr::opts_chunk$set(echo=TRUE,include=TRUE)
-# library(tidyverse)
-# library(cowplot)
-# library(here)
-# library(png)
-# library(grid)
 require(tidyverse)
 require(magrittr)
 require(rvest)
-# require(glue)
 require(ggformula) # for geom_spline
 require(ggtext) # for markdown in plots - https://github.com/wilkelab/ggtext
+require(gt)
 ```
 
 Using the [acciotables](https://github.com/npranav10/acciotables/) API, and some minor data transformation in R, it's possible to get Statsbomb/FBRef expected goals data for every EPL match since 2017-18.
@@ -25,7 +20,7 @@ This standalone script will produce a dataset and visualisation to use as a star
 
 ## Getting data with the acciotables API
 
-FBRef stores a summary of all 380 matches in a [single html table](https://fbref.com/en/comps/9/3232/schedule). We just need the `page_url` and `selector_id`, and acciotables will produce the data in a nice html format.
+FBref stores a summary of all 380 matches in a [single html table](https://fbref.com/en/comps/9/3232/schedule). We just need the `page_url` and `selector_id`, and acciotables will produce the data in a nice html format.
 
 Looking in the page source gives the `selector_id`: **%23sched_ks_3232_1**
 
@@ -34,7 +29,7 @@ page_url <- "https://fbref.com/en/comps/9/3232/schedule/"
 selector_id <- "%23sched_ks_3232_1"
 url <- paste0("http://acciotables.herokuapp.com/?page_url=",page_url,"&content_selector_id=",selector_id)
 
-print(paste0("API url: ",url))
+cat(paste0("API url: ",url))
 ```
 
 Check the API is working in your [browser](`r url`).
@@ -44,12 +39,15 @@ Check the API is working in your [browser](`r url`).
 There's a guide in the [acciotables readme](https://github.com/npranav10/acciotables/#-calling-the-api-in-r).
 
 ```{r import, echo=TRUE, include=TRUE}
-matches <- url %>%
+matches_import <- url %>%
   read_html() %>%
   html_table() %>%
   extract2(1) # unnest the data_frame from the list
 
-head(matches)
+head(matches_import)
+# print(head(matches))
+# format(head(matches_import))
+# gt(head(matches))
 ```
 
 ## Tidy the data
@@ -59,53 +57,57 @@ There's a few things to sort out to make the raw data more usable.
 * There are two columns called `xG`. That is definitely going to make something go wrong.
 
 ```{r fix-names}
-names(matches) <-
-  names(matches) %>%
+names(matches_import) <-
+  names(matches_import) %>%
   make.unique(sep="_")
 
-matches <-
-  matches %>%
+matches_tidy1 <-
+  matches_import %>%
   rename("HomexG"="xG","AwayxG"="xG_1")
 
-names(matches)
+cat(names(matches_tidy1))
+
+gt(head(matches_tidy1))
 ```
 
 * The dataset has some non-data lines. There should be 380 lines of data, one for each match in the season.
 
 ```{r non-data}
-matches <-
-  matches %>%
+matches_tidy2 <-
+  matches_tidy1 %>%
   filter(Wk!="Wk",Wk!="")
 
-dim(matches) # how many rows and columns?
+cat(paste0("rows: ",dim(matches_tidy2)[1],"\n","columns: ",dim(matches_tidy2)[2]))
 ```
 
 * Don't care about the attendance, referee etc.
 
 ```{r delete-cols}
-matches <-
-  matches %>%
+matches_tidy3 <-
+  matches_tidy2 %>%
   select(-c("Attendance":"Notes"))
 
-head(matches)
+gt(head(matches_tidy3))
 ```
 
 * The `Score` column looks something like **4-1**. We want two columns: home goals and away goals.
 
 ```{r separate}
-matches <-
-  matches %>%
+matches_tidy4 <-
+  matches_tidy3 %>%
   separate("Score",c("HomeGls","AwayGls"),sep="[:punct:]",fill="right")
 
-head(matches)
+gt(head(matches_tidy4))
 ```
 
 * All the data has the *character* datatype, so a simple line will auto-detect which ones should be numeric, date etc.
 
 ```{r type}
-matches <-
-  matches %>%
+matches_tidy5 <-
+  matches_tidy4 %>%
   type_convert()
+
+gt(head(matches_tidy5))
 ```
 
 This is much easier to work with, but there's one more change that will help a lot later.
@@ -144,11 +146,11 @@ make_long_matches <- function(matches){
   return(long_matches)
 }
 
-matches_long <- make_long_matches(matches)
+matches_long <- make_long_matches(matches_tidy5)
 
-head(matches_long)
+gt(head(matches_long))
 
-dim(matches_long)
+cat(paste0("rows: ",dim(matches_long)[1],"\n","columns: ",dim(matches_long)[2]))
 ```
 
 Now there are 760 rows, one for each team in each match.
@@ -202,20 +204,19 @@ matches_team %>%
 ```
 
 <center>
-<img src="{{site.baseurl}}/images/2020-10-28-fbref-data-viz/plot-1.png" width="100%">
+<img src="{{site.baseurl}}/images/2020-10-28-fbref-data-viz/plot-1.png" width="80%">
 </center>
 
-And that's it! 
-
-## Further reading / refs / acknowledgements
+## Further reading / references / acknowledgements
 * [Link to the complete script](https://gist.github.com/szfh/a20f15d0c110898dcff5f4708f5ee630)
-* [acciotables](https://github.com/npranav10/acciotables) by [Pranav N](https://twitter.com/npranav10
-* [Statsbomb](https://statsbomb.com/) for providing the data which is hosted by...
-[FBRef](https://fbref.com/en/)
-Various people for testing
-* [R Graph Gallery](https://www.r-graph-gallery.com/) for more viz ideas
+* [acciotables](https://github.com/npranav10/acciotables) by [Pranav N](https://twitter.com/npranav10)
+* [ggtext](https://github.com/wilkelab/ggtext) for Markdown in ggplots
+* [Statsbomb](https://statsbomb.com/) for providing the data hosted by
+[FBref](https://fbref.com/en/)
+* Various people for testing
+* [R Graph Gallery](https://www.r-graph-gallery.com/) and [Cédric Scherer](https://cedricscherer.netlify.app/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/) for more viz ideas
 * Need help? Probably best to [tweet at me](https://twitter.com/saintsbynumbers)
 
 ## One more thing
 
-It's friendly to give credit to the data providers at Statsbomb and FBRef. Statsbomb's media guide is here. If you want to add their logos to your images, [you can use Cowplot for that](https://szfh.github.io/cowplot/).
+It's friendly to give credit to the data providers at Statsbomb and FBref. Statsbomb's media guide is here, and if you want to add their logos to your images, [you can use Cowplot for that](https://szfh.github.io/cowplot/).
