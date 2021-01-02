@@ -15,9 +15,9 @@ require(ggtext) # for markdown in plots - https://github.com/wilkelab/ggtext
 require(gt)
 ```
 
-Using the [acciotables](https://github.com/npranav10/acciotables/) API, and some minor data transformation in R, it's possible to get Statsbomb/FBRef expected goals data for every EPL match since 2017-18.
+Using the [acciotables](https://github.com/npranav10/acciotables/) API, and some minor data transformation in R, it's possible to get Statsbomb/FBref expected goals data for every EPL match since 2017-18.
 
-This standalone script will produce a dataset and visualisation to use as a starting point for more detailed analysis and graphics. You don't need your own data, just an installation of R and RStudio.
+This standalone guide will produce a dataset and visualisation to use as a starting point for more detailed analysis and graphics. You don't need your own data, just an installation of R and RStudio.
 
 ## Getting data with the acciotables API
 
@@ -62,8 +62,6 @@ names(matches_import) <-
 matches_tidy1 <-
   matches_import %>%
   rename("HomexG"="xG","AwayxG"="xG_1")
-
-cat(names(matches_tidy1))
 
 gt(head(matches_tidy1))
 ```
@@ -208,7 +206,8 @@ ggsave(here("images","2020-10-28-fbref-data-viz","plot-1.jpg"),dpi=600)
 </center>
 
 ## Further reading / references / acknowledgements
-* [Link to the complete script](https://gist.github.com/szfh/a20f15d0c110898dcff5f4708f5ee630) - this is compressed a bit more and uses moving averages on the same data.
+* [Complete script](https://gist.github.com/szfh/a20f15d0c110898dcff5f4708f5ee630) - this is compressed a bit more and uses moving averages on the same data.
+* [RMarkdown script](https://github.com/szfh/szfh.github.io/blob/master/R/2020-10-28-fbref-data-viz.Rmd) used to create this post.
 * [acciotables](https://github.com/npranav10/acciotables) by [Pranav N](https://twitter.com/npranav10)
 * [ggtext](https://github.com/wilkelab/ggtext) for Markdown in ggplots
 * [Statsbomb](https://statsbomb.com/) for providing the data hosted by
@@ -218,4 +217,4 @@ ggsave(here("images","2020-10-28-fbref-data-viz","plot-1.jpg"),dpi=600)
 
 ## One more thing
 
-It's friendly to give credit to the data providers at Statsbomb and FBref. Statsbomb's media guide is here, and if you want to add their logos to your images, [you can use Cowplot for that](https://szfh.github.io/cowplot/).
+It's friendly to give credit to the data providers at Statsbomb and FBref. Statsbomb's media guide is [here](https://statsbomb.com/media-pack/), and if you want to add their logos to your images, [you can use Cowplot for that](https://szfh.github.io/cowplot/).
