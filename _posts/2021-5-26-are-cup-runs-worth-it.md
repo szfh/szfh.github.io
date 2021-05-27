@@ -19,4 +19,9 @@ Ralph put a lot into the cups in 2020-21, and played a full first team in five e
 
 Four of those were followed by defeats, the other was Burnley which was played eight days after the Bournemouth QF.
 
-![plot of chunk tweet](H:/Projects/szfh.github.io/images/2021-5-26-are-cup-runs-worth-it/tweet-1.png)
+
+
+<center>
+<img src="{{site.baseurl}}/images/2021-5-26-are-cup-runs-worth-it/tweet-1-1.png" width="60%">  
+</center>
+*[@Saints_FCLive](https://twitter.com/Saints_FCLive/status/1397539305711669251) / [@TomLeachHL](https://twitter.com/TomLeachHL)*
