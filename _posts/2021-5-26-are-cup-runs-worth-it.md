@@ -10,6 +10,7 @@ editor_options:
 
 
 <center>
-<img src="{{site.baseurl}}/images/kit_home_22.jpg" width="80%">  
+<img src="{{site.baseurl}}/images/2021-5-26-are-cup-runs-worth-it/ralph.jpg" width="80%">  
 </center>  
 
+*Robin Jones/Getty Images*
