@@ -10,6 +10,6 @@ editor_options:
 
 
 <center>
-<img src="{{site.baseurl}}/images/kit_home_22.png" width="80%">  
+<img src="{{site.baseurl}}/images/kit_home_22.jpg" width="80%">  
 </center>  
 
