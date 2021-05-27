@@ -8,7 +8,9 @@ editor_options:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
+library(tweetrmd)
+library(webshot2)
 ```
 
 <center>
@@ -16,3 +18,13 @@ knitr::opts_chunk$set(echo = TRUE)
 </center>  
 
 *Robin Jones/Getty Images*
+
+Ralph put a lot into the cups in 2020-21, and played a full first team in five extra matches.
+
+Four of those were followed by defeats, the other was Burnley which was played eight days after the Bournemouth QF.
+
+```{r tweet}
+tweet_url <- "https://twitter.com/Saints_FCLive/status/1397539305711669251"
+include_tweet(tweet_url)
+# tweet_screenshot(tweet_url)
+```
