@@ -7,9 +7,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+
 
 <center>
 <img src="{{site.baseurl}}/images/kit_home_22.png" width="80%">  
