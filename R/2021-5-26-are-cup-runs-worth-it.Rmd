@@ -7,7 +7,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, eval=TRUE}
 knitr::opts_chunk$set(echo = FALSE)
 library(tweetrmd)
 library(webshot2)
@@ -23,9 +23,9 @@ Ralph put a lot into the cups in 2020-21, and played a full first team in five e
 
 Four of those were followed by defeats, the other was Burnley which was played eight days after the Bournemouth QF.
 
-```{r tweet-1, include=FALSE, eval=TRUE}
+```{r tweet-1}
 tweet_url <- "https://twitter.com/Saints_FCLive/status/1397539305711669251"
-include_tweet(tweet_url)
+include_tweet(tweet_url, hide_thread=TRUE)
 ```
 
 <center>
