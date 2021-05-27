@@ -7,8 +7,8 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r setup, include=FALSE, eval=TRUE}
-knitr::opts_chunk$set(echo = FALSE)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, include=FALSE, eval=TRUE)
 library(tweetrmd)
 library(webshot2)
 ```
