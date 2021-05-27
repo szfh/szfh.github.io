@@ -27,3 +27,4 @@ knit_to_site <- function(date,name,loc="drafts",keep_html=FALSE){
 # knit_to_site("2020-8-2","is-hojbjerg-good","posts")
 # knit_to_site("2020-10-28","fbref-data-viz","posts")
 # knit_to_site("2020-11-19","press-intensity","posts")
+knit_to_site("2021-5-26","are-cup-runs-worth-it","posts")
